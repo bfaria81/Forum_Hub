@@ -29,7 +29,7 @@ public class SecurityConfigurations {
                     req.requestMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll();
                     req.anyRequest().authenticated();
                 })
-                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class) // indica que o filtro de forçar autenticação virá primeiro que o filter do spring
+                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class) // O filtro para forçar autenticação virá primeiro que o filter do spring
                 .build();
     }
 

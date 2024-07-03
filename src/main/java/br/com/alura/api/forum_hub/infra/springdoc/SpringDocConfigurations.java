@@ -8,10 +8,10 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+// configuração para liberação de acesso ao token na documentação
 @Configuration
 public class SpringDocConfigurations {
 
-    // configuração para liberar acesso a token na documentação
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()

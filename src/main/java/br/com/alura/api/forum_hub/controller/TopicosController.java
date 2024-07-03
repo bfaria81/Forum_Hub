@@ -21,7 +21,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("topicos")
-@SecurityRequirement(name = "bearer-key") //liberando acesso ao token na documentação
+@SecurityRequirement(name = "bearer-key") //libera o acesso do token na documentação
 public class TopicosController {
     @Autowired
     private TopicoRepository repository;

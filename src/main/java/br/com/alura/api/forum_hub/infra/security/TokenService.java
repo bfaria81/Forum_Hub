@@ -31,7 +31,7 @@ public class TokenService {
         }
     }
 
-    // valida o token e recupera o subject
+    // Valida o token e recupera o subject
     public String getSubject(String tokenJWT){
         try {
             var algoritmo = Algorithm.HMAC256(secret);
@@ -46,6 +46,6 @@ public class TokenService {
     }
 
     private Instant dataEpiracao() {
-        return LocalDateTime.now().plusHours(1).toInstant(ZoneOffset.of("-03:00")); // adiciona um horário de 1 hora de validação de token de acordo com o horário padrão do Brasil
+        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00")); // adiciona 2 horas de validação do token conforme horário padrão do Brasil
     }
 }

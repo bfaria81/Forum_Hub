@@ -30,10 +30,10 @@ public class SecurityFilter extends OncePerRequestFilter { // garante que será 
             var subject = tokenService.getSubject(tokenJWT);
             var usuario = repository.findByLogin(subject);
 
-            // cria um dto que representa o usuario
+            // Cria um DTO que representa o usuario
             var authentication = new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
 
-            // força a autenticação
+            // Força a autenticação
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
 

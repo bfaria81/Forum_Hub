@@ -15,10 +15,10 @@ public class TratadorDeErros {
         return ResponseEntity.notFound().build();
     }
 
-    // Tratador de erros para campos inválidos
+    // Trata os erros para campos inválidos
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity tratarErro400(MethodArgumentNotValidException exception){
-        var erros = exception.getFieldErrors(); // devolve a lista dos erros dos campos
+        var erros = exception.getFieldErrors(); // Devolve uma lista dos erros dos campos com erro
 
         return ResponseEntity.badRequest().body(erros.stream().map(DadosErroValidacao::new).toList());
     }
